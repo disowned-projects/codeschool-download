@@ -1,3 +1,5 @@
+[![npm](https://img.shields.io/npm/v/codeschool-download.svg?style=plastic)](https://www.npmjs.com/package/codeschool-download) [![npm](https://img.shields.io/npm/l/codeschool-download.svg?style=plastic)](https://www.npmjs.com/package/codeschool-download)
+
 # CodeSchool-Download
 
 Easliy Download CodeSchool Course videos.
