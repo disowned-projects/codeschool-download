@@ -1,3 +1,5 @@
+import Path from 'path'
+
 export const login = async (nightmare, username, password) => {
     await nightmare
         .type('#user_login', username)
@@ -11,6 +13,6 @@ export const openLoginPage = async nightmare => {
     await nightmare
         .goto('https://www.codeschool.com/users/sign_in')
         .wait('#user_login')
-        .inject('js', 'node_modules/jquery/dist/jquery.js')
+        .inject('js', Path.resolve(__dirname, '../Vendor/jquery.min.js'))
         .catch(console.log)
 }
