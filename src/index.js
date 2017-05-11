@@ -69,7 +69,8 @@ async function start() {
         )
 
         // extract video links for new courses
-        const newCourses = await Promise.each(
+        // and save after extracting each course
+        await Promise.each(
             remainingCourses,
             async course => {
                 console.log()
@@ -77,16 +78,12 @@ async function start() {
                 console.log()
                 await openVideosPage({ nightmare, course })
                 const videos = await extractVideosList(nightmare)
-                return Object.assign(course, { videos })
+                storedCourses[course.title] = Object.assign(course, { videos })
+                await saveFile(storedCourses)
             },
         )
         await nightmare.end()
         console.log('Compeleted extracting video links.')
-
-        // update storedCourses object with new extracted courses and save it
-        // to `courses.json` file if changes have been made
-        newCourses.forEach(course => (storedCourses[course.title] = course))
-        await saveFile(storedCourses)
     } else if (job === 'Download Videos') {
         // the length of courses stored in `courses.json` file
         const length = Object.keys(storedCourses).length
