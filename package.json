@@ -7,11 +7,11 @@
     "test": "jest --env=node",
     "build": "rimraf build/ && mkdir build && babel src -d build",
     "dev": "NODE_ENV=development;NODE_PATH=src babel-node src",
-    "start": "NODE_ENV=production;NODE_PATH=build node build/index.js",
+    "start": "./bin/codeschool-download.js",
     "format": "bash scripts/format.sh"
   },
   "bin": {
-    "codeschool-download": "NODE_PATH=build node build/index.js"
+    "codeschool-download": "./bin/codeschool-download.js"
   },
   "keywords": [
     "codeschool",
@@ -26,6 +26,7 @@
   "repository": "doshisid/codeschool-download",
   "license": "MIT",
   "dependencies": {
+    "app-module-path": "^2.2.0",
     "babel-runtime": "^6.23.0",
     "bluebird": "^3.5.0",
     "bytes": "^2.5.0",
