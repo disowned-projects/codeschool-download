@@ -1,6 +1,6 @@
 {
   "name": "codeschool-download",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Script to download Code School videos.",
   "main": "index.js",
   "scripts": {
