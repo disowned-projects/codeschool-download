@@ -1,21 +1,21 @@
-import 'Config/env.js'
+import './Config/env.js'
 
 import Nightmare from 'nightmare'
 import ClearScreen from 'clear'
 import Promise from 'bluebird'
 
-import promptJob from 'Lib/promptJob'
-import promptAccountInfo from 'Lib/promptAccountInfo'
-import { openLoginPage, login } from 'Lib/login'
-import { openCoursesPage, extractCoursesList } from 'Lib/courses'
-import { openVideosPage, extractVideosList } from 'Lib/videos'
-import downloadVideos from 'Lib/downloadVideos'
-import { saveFile } from 'Lib/file'
-import getStoredCourses from 'Lib/getStoredCourses'
+import promptJob from './Lib/promptJob'
+import promptAccountInfo from './Lib/promptAccountInfo'
+import { openLoginPage, login } from './Lib/login'
+import { openCoursesPage, extractCoursesList } from './Lib/courses'
+import { openVideosPage, extractVideosList } from './Lib/videos'
+import downloadVideos from './Lib/downloadVideos'
+import { saveFile } from './Lib/file'
+import getStoredCourses from './Lib/getStoredCourses'
 import {
     promptCoursesForExtraction,
     promptStoredCourses,
-} from 'Lib/promptCourses'
+} from './Lib/promptCourses'
 
 async function start() {
     ClearScreen()

@@ -1,4 +1,4 @@
-import { parseVideoInfo } from 'Lib/videos'
+import { parseVideoInfo } from '../videos'
 import { lastScriptContent, expectedOutput } from './fixtures/parseVideoInfo'
 
 describe('Parse video information from last script in codeschool page', () => {

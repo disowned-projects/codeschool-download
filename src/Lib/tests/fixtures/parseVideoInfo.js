@@ -3,6 +3,7 @@ export const lastScriptContent =
 
 export const expectedOutput = [
     {
+        downloaded: false,
         site: 'codeschool',
         sso: 'Tg5BfycB7jBnsNsjTAj4Eba3zKOAJ3ZQoxSYv-WMsg3KueGkzNM15ztG2-uf5FAXi_xUBm6JmpgfTEuBV7ZiXCr8L7B3WrWba9YaMl15iWvQ2wBQsN6BcMDRIgkmCWbR',
         title: 'Running Your First Container',
@@ -10,6 +11,7 @@ export const expectedOutput = [
         videoId: '3dcd00a6',
     },
     {
+        downloaded: false,
         site: 'codeschool',
         sso: 'Tg5BfycB7jBnsNsjTAj4Eba3zKOAJ3ZQoxSYv-WMsg3KueGkzNM15ztG2-uf5FAXi_xUBm6JmpgfTEuBV7ZiXCr8L7B3WrWba9YaMl15iWuiWaasT6I-v5kjNCng8TLJ',
         title: 'Automating the Creation of Custom Images',
@@ -17,6 +19,7 @@ export const expectedOutput = [
         videoId: 'c48c5a3',
     },
     {
+        downloaded: false,
         site: 'codeschool',
         sso: 'Tg5BfycB7jBnsNsjTAj4Eba3zKOAJ3ZQoxSYv-WMsg3KueGkzNM15ztG2-uf5FAXi_xUBm6JmpgfTEuBV7ZiXCr8L7B3WrWba9YaMl15iWvT0hYXDsZlyKknIhrgX-aK',
         title: 'Working With Data in Containers',

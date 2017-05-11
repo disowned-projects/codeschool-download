@@ -5,8 +5,8 @@ import Bytes from 'bytes'
 import Fs from 'fs-extra'
 import Promise from 'bluebird'
 
-import { saveFile } from 'Lib/file'
-import getStoredCourses from 'Lib/getStoredCourses'
+import { saveFile } from './file'
+import getStoredCourses from './getStoredCourses'
 
 const download = (url, filePath) =>
     new Promise((resolve, reject) => {

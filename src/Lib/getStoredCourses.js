@@ -1,6 +1,6 @@
 import Fs from 'fs-extra'
 
-import { coursesJsonPath, saveFile } from 'Lib/file'
+import { coursesJsonPath, saveFile } from './file'
 
 export default async () => {
     // get storedCourses object from previous extraction saved in
