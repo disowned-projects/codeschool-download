@@ -16,6 +16,7 @@ export const parseVideoInfo = string => {
     // index of last ']'
     const end = string.indexOf(endString) + endString.length
     if (end < 0 || start < 0) return []
+    if (string[start] !== '[' || string[end - 1] !== ']') return []
     // the array storing the information of all videos
     const arr = JSON.parse(string.slice(start, end))
     // parse the information from previous array in more useful form
