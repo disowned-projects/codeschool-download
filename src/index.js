@@ -59,7 +59,10 @@ async function start() {
         // provides, then prompt the user which courses needs to be downloaded
         await openCoursesPage(nightmare)
         const coursesList = await extractCoursesList(nightmare)
-        const selectedCourses = await promptCoursesForExtraction(coursesList)
+        const selectedCourses = await promptCoursesForExtraction(
+            coursesList,
+            storedCourses,
+        )
 
         // from the selected courses, take the courses that are remaining to
         // be saved in `courses.json` file and extract video links for those
@@ -70,18 +73,15 @@ async function start() {
 
         // extract video links for new courses
         // and save after extracting each course
-        await Promise.each(
-            remainingCourses,
-            async course => {
-                console.log()
-                console.log(`Extracting video links for ${course.title}`)
-                console.log()
-                await openVideosPage({ nightmare, course })
-                const videos = await extractVideosList(nightmare)
-                storedCourses[course.title] = Object.assign(course, { videos })
-                await saveFile(storedCourses)
-            },
-        )
+        await Promise.each(remainingCourses, async course => {
+            console.log()
+            console.log(`Extracting video links for ${course.title}`)
+            console.log()
+            await openVideosPage({ nightmare, course })
+            const videos = await extractVideosList(nightmare)
+            storedCourses[course.title] = Object.assign(course, { videos })
+            await saveFile(storedCourses)
+        })
         await nightmare.end()
         console.log('Compeleted extracting video links.')
     } else if (job === 'Download Videos') {
@@ -119,4 +119,4 @@ async function start() {
 }
 start()
 
-/* eslint import/first: off */ 
+/* eslint import/first: off */

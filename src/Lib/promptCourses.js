@@ -19,7 +19,10 @@ export const promptStoredCourses = async storedCourses => {
     return selectedCourses
 }
 
-export const promptCoursesForExtraction = async coursesList => {
+export const promptCoursesForExtraction = async (
+    coursesList,
+    storedCourses = {},
+) => {
     const _coursesList = [...coursesList].sort((a, b) => {
         let titleA = a.title
         let titleB = b.title
@@ -30,7 +33,9 @@ export const promptCoursesForExtraction = async coursesList => {
         return 0
     })
     const choices = _coursesList.map(course => ({
-        name: course.title,
+        name: storedCourses[course.title]
+            ? course.title + ' (Extracted once) '
+            : course.title
     }))
     const { selectedCourses } = await Inquirer.prompt([
         {
