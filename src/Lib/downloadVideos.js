@@ -55,7 +55,7 @@ export default async course => {
         return
     }
     await Promise.each(videos, async (video, index) => {
-        const fileName = Case.kebab(video.title)
+        const fileName = (index + 1) + '-' + Case.kebab(video.title)
         const filePath = basePath + fileName + '.mp4'
         console.log()
         console.log(`Downloading '${video.title} (${index + 1} of ${total})'`)
