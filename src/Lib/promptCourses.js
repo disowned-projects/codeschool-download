@@ -3,8 +3,8 @@ import Inquirer from 'inquirer'
 export const promptStoredCourses = async storedCourses => {
     const choices = Object.keys(storedCourses).filter(courseName => {
         const course = storedCourses[courseName]
-        course.videos = course.videos.filter(video => !video.downloaded)
-        return course.videos.length > 0
+        const videos = course.videos.filter(video => !video.downloaded)
+        return videos.length > 0
     })
     .sort((titleA, titleB) => {
         titleA = titleA.replace(/[^a-z0-9 ]/gi, '').toLowerCase()
