@@ -49,12 +49,13 @@ export const parseVideoInfo = string => {
 }
 
 export const extractVideosList = async nightmare => {
-    // the last script in the current nightmare page contains all information 
+    // there is a special script in the current nightmare page that contains all information 
     // to put togther a list with the name of video and its url, so extract it
-    const lastScriptContent = await nightmare.evaluate(() => {
+    // As of 08/18/2017 it is the second-last script in the page
+    const videosScriptContent = await nightmare.evaluate(() => {
         const scripts = $('script').toArray()
-        const lastScript = scripts[scripts.length - 1]
-        return lastScript.innerHTML
+        const videosScript = scripts[scripts.length - 2]
+        return videosScript.innerHTML
     })
-    return parseVideoInfo(lastScriptContent)
+    return parseVideoInfo(videosScriptContent)
 }
