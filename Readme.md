@@ -1,6 +1,10 @@
 [![npm](https://img.shields.io/npm/v/codeschool-download.svg?style=plastic)](https://www.npmjs.com/package/codeschool-download) [![npm](https://img.shields.io/npm/l/codeschool-download.svg?style=plastic)](https://www.npmjs.com/package/codeschool-download)
 
+# NO LONGER ACTIVELY MAINTAINED #
+Due to a lack of motivation/interest, I am no longer actively maintaining this project. The current code should work most of the time. One thing that requires maintaining is updating the script used to parse video links as Codeschool keeps changing it. The project and the source code will remain here on GitHub and on npm but there will no longer be any changes from my side. I would be happy to merge PRs or transfer the project.
+
 # CodeSchool-Download
+
 
 Easliy Download CodeSchool Course videos.
 
