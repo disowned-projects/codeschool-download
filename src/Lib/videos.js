@@ -54,8 +54,10 @@ export const extractVideosList = async nightmare => {
     // As of 08/18/2017 it is the second-last script in the page
     const videosScriptContent = await nightmare.evaluate(() => {
         const scripts = $('script').toArray()
-        const videosScript = scripts[scripts.length - 2]
-        return videosScript.innerHTML
+        return scripts.map(script => ({
+            content: script.innerHTML
+        }))
     })
-    return parseVideoInfo(videosScriptContent)
+    const { content } = videosScriptContent[videosScriptContent.length - 3]
+    return parseVideoInfo(content)
 }
