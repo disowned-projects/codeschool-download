@@ -50,8 +50,8 @@ export const parseVideoInfo = string => {
 
 export const extractVideosList = async nightmare => {
     // there is a special script in the current nightmare page that contains all information 
-    // to put togther a list with the name of video and its url, so extract it
-    // As of 08/18/2017 it is the second-last script in the page
+    // to put together a list with the name of video and its url, so extract it
+    // As of 10/23/2017 it is the third-last script in the page
     const videosScriptContent = await nightmare.evaluate(() => {
         const scripts = $('script').toArray()
         return scripts.map(script => ({
